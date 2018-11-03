@@ -8,7 +8,7 @@ var searchArray = ['Dog', 'Cat', 'Bird'];
 
 function populateButtons(searchArray, classToAdd, areaToAddTo) {
     $(areaToAddTo).empty();
-    for( var i = 0; i < searchArray.length; i++) {
+    for(var i = 0; i < searchArray.length; i++) {
         var a = $('<button>');
         a.addClass(classToAdd);
         a.attr('data-type', searchArray[i]);
@@ -56,7 +56,7 @@ $(document).on('click','.searchImage', function(){
 })
 // add new buttons to text box
 $('#addSearch').on('click',function(){
-    var newSearch = $('input').eq(0).val();
+    var newSearch = $('input').val().trim();
     searchArray.push(newSearch);
     populateButtons(searchArray,'searchButton', '#buttonsArea');
     return false;
