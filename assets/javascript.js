@@ -55,8 +55,9 @@ $(document).on('click','.searchImage', function(){
     }
 })
 // add new buttons to text box
-$('#addSearch').on('click',function(){
+$('#search-form').on('submit',function(){
     var newSearch = $('input').val().trim();
+    console.log(newSearch);
     searchArray.push(newSearch);
     populateButtons(searchArray,'searchButton', '#buttonsArea');
     return false;
